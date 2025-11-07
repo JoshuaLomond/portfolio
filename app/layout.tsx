@@ -19,8 +19,6 @@ export const metadata: Metadata = {
   description: "Joshua Lomond's Development Portfolio",
 };
 
-import ScrollToTopButton from "./components/ScrollToTopButton";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,8 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        {children}
-        <ScrollToTopButton />
+        <main className="h-[calc(100vh-64px)]">{children}</main>
       </body>
     </html>
   );
