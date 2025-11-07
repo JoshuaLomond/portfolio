@@ -1,6 +1,6 @@
 // app/resume/page.tsx
 import Link from "next/link";
-import { Home, Mail, Phone, Linkedin, Github } from "lucide-react";
+import { Home, Mail, Linkedin, Github } from "lucide-react";
 import type { Metadata } from "next";
 
 // This sets the page title and description for the browser tab
@@ -80,14 +80,11 @@ export default function ResumePage() {
         </h1>
         <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-gray-600 dark:text-gray-400">
           <span className="inline-flex items-center gap-2">Halifax, NS</span>
-          <span className="inline-flex items-center gap-2">
-            <Phone size={14} /> (902) 410 - 8027
-          </span>
           <a
-            href="mailto:josh.lomond@dal.ca"
+            href="mailto:josh@joshlomond.dev"
             className="inline-flex items-center gap-2 text-blue-600 hover:underline dark:text-blue-400"
           >
-            <Mail size={14} /> josh.lomond@dal.ca
+            <Mail size={14} /> josh@joshlomond.dev
           </a>
           <a
             href="https://linkedin.com/in/JoshuaLomond"
