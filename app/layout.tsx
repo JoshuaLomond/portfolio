@@ -12,10 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import Navbar from "./components/Navbar";
+
 export const metadata: Metadata = {
   title: "Josh's Portfolio",
   description: "Joshua Lomond's Development Portfolio",
 };
+
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export default function RootLayout({
   children,
@@ -27,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <ScrollToTopButton />
       </body>
     </html>
   );

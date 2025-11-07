@@ -1,9 +1,25 @@
 /* app/globals.css */
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    --background-light: #ffffff;
+    --background-dark: #111827;
+    --text-light: #1f2937;
+    --text-dark: #f9fafb;
+    --primary-light: #1e40af;
+    --primary-dark: #60a5fa;
+    --secondary-light: #f3f4f6;
+    --secondary-dark: #1f2937;
+  }
+}
+
 /* Set up default text colors and a smooth transition
   for light/dark mode.
 */
 body {
-  @apply bg-white text-gray-800 transition-colors duration-200 dark:bg-gray-900 dark:text-gray-200;
+  @apply bg-[var(--background-light)] text-[var(--text-light)] transition-colors duration-200 dark:bg-[var(--background-dark)] dark:text-[var(--text-dark)];
+}
+
+.dark body {
 }

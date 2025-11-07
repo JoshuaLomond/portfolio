@@ -18,9 +18,9 @@ export default function ProjectCard({
   liveUrl,
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-shadow hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
+    <div className="flex flex-col justify-between rounded-lg border border-gray-200 bg-[var(--secondary-light)] p-6 shadow-md transition-all duration-300 hover:scale-105 hover:border-[var(--primary-light)] hover:shadow-xl dark:border-gray-700 dark:bg-[var(--secondary-dark)] dark:hover:border-[var(--primary-dark)]">
       <div>
-        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+        <h3 className="text-2xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)]">
           {title}
         </h3>
         <p className="mt-3 text-gray-700 dark:text-gray-300">{description}</p>
@@ -28,7 +28,7 @@ export default function ProjectCard({
           {tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+              className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-[var(--primary-light)] dark:bg-blue-900/50 dark:text-[var(--primary-dark)]"
             >
               {tag}
             </span>
@@ -40,7 +40,7 @@ export default function ProjectCard({
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          className="flex items-center text-gray-600 transition-colors hover:text-[var(--primary-light)] dark:text-gray-400 dark:hover:text-[var(--primary-dark)]"
           aria-label={`${title} GitHub Repository`}
         >
           <Github size={20} />
@@ -51,7 +51,7 @@ export default function ProjectCard({
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            className="flex items-center text-gray-600 transition-colors hover:text-[var(--primary-light)] dark:text-gray-400 dark:hover:text-[var(--primary-dark)]"
             aria-label={`${title} Live Demo`}
           >
             <ExternalLink size={20} />
