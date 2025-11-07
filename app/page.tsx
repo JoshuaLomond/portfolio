@@ -1,4 +1,5 @@
 // app/page.tsx
+import Link from "next/link";
 import ProjectCard from "./components/ProjectCard";
 import { Github, Linkedin, Mail } from "lucide-react";
 
@@ -42,6 +43,16 @@ export default function Home() {
               <Mail size={28} />
             </a>
           </div>
+          {/* === RESUME BUTTON === */}
+          <div className="mt-10">
+            <Link
+              href="/resume"
+              className="rounded-md bg-blue-600 px-7 py-3 text-lg font-medium text-white shadow-md transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              View My Resume
+            </Link>
+          </div>
+          {/* ============================== */}
         </section>
 
         {/* === ABOUT SECTION === */}
