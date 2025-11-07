@@ -35,7 +35,7 @@ export default function Home() {
               <Linkedin size={28} />
             </a>
             <a
-              href="mailto:comingSoon@joshdev.com"
+              href="mailto:josh@joshlomond.dev"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               aria-label="Send an Email"
             >
@@ -69,14 +69,14 @@ export default function Home() {
               title="Project One"
               description="A brief description of this awesome project. What it does, why you built it, and what tech you used."
               tags={["Next.js", "Tailwind", "TypeScript"]}
-              githubUrl="https://github.com/your-username/project-one"
+              githubUrl="https://github.com/joshualomond"
             />
             <ProjectCard
               title="Project Two"
               description="Another cool project. This one might focus on a different skill, like a complex backend API."
               tags={["Node.js", "Express", "PostgreSQL"]}
-              githubUrl="https://github.com/your-username/project-two"
-              liveUrl="https://project-two-live.com"
+              githubUrl="https://github.com/joshualomond"
+              liveUrl="https://joshlomond.dev"
             />
             {/* Add more <ProjectCard /> components */}
           </div>
@@ -92,7 +92,7 @@ export default function Home() {
             email!
           </p>
           <a
-            href="mailto:comingSoon@joshdev.com"
+            href="mailto:josh@joshlomond.dev"
             className="mt-6 inline-block rounded-md bg-blue-600 px-6 py-3 text-lg font-medium text-white shadow-md transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Say Hello
