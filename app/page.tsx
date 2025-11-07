@@ -12,7 +12,7 @@ export default function Home() {
             Joshua Lomond
           </h1>
           <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-            Full-Stack Developer | TypeScript Specialist | Open-Source
+            Full-Stack Developer | Computer Science Student | Open-Source
             Contributor
           </p>
           <div className="mt-8 flex justify-center space-x-6">
@@ -52,9 +52,7 @@ export default function Home() {
           <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
             Hello! I'm a passionate developer with a love for building efficient
             and scalable web applications. I specialize in React, Next.js, and
-            Node.js, and I'm always eager to learn new technologies. When I'm
-            not coding, you can find me exploring new hiking trails or
-            contributing to open-source projects.
+            Node.js. I'm always eager to learn new technologies!
           </p>
         </section>
 
@@ -67,7 +65,7 @@ export default function Home() {
             {/* Project Components */}
             <ProjectCard
               title="Project One"
-              description="A brief description of this awesome project. What it does, why you built it, and what tech you used."
+              description="A brief description of this project. What it does, why I built it, and the tech-stack."
               tags={["Next.js", "Tailwind", "TypeScript"]}
               githubUrl="https://github.com/joshualomond"
             />
