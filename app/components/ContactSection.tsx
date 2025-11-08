@@ -22,7 +22,7 @@ export default function ContactSection() {
     });
 
     if (res.ok) {
-      setStatus("Message sent successfully!");
+      setStatus("Your message has been sent!");
       setName("");
       setEmail("");
       setMessage("");
