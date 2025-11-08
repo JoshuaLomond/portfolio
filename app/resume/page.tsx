@@ -234,7 +234,7 @@ export default function ResumePage() {
               </span>
             </div>
             <a
-              href="/resume.pdf"
+              href="/Joshua-Lomond-Resume.pdf"
               download
               className="mt-6 block w-full rounded-md bg-blue-600 py-2 text-center font-semibold text-white transition-colors hover:bg-blue-700"
             >
