@@ -13,10 +13,8 @@ export default function ContactSection() {
   };
   return (
     <section className="mt-20 text-center">
-      <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-        Get In Touch
-      </h2>
-      <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+      <h2 className="text-gray-900 dark:text-white">Get In Touch</h2>
+      <p className="text-lg text-gray-700 dark:text-gray-300">
         I'm currently open to new opportunities. Feel free to send me an email!
       </p>
       <div className="mt-4 flex items-center justify-center space-x-2">

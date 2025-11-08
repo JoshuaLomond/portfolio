@@ -8,7 +8,7 @@ export default function ProjectsSection() {
   return (
     <AnimatedSection>
       <section className="mt-20">
-        <h2 className="text-3xl font-bold text-[var(--text-light)] dark:text-[var(--text-dark)]">
+        <h2 className="text-[var(--text-light)] dark:text-[var(--text-dark)]">
           My Projects
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">

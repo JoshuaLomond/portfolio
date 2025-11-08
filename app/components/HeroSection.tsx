@@ -9,10 +9,8 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden rounded-lg bg-gradient-to-br from-[var(--primary-light)] to-blue-500 py-20 text-center text-white shadow-lg dark:from-[var(--primary-dark)] dark:to-blue-800">
       <div className="relative z-10">
-        <h1 className="animate-subtle-glow text-5xl font-bold md:text-6xl">
-          Joshua Lomond
-        </h1>
-        <p className="mt-4 text-xl text-blue-100">
+        <h1 className="animate-subtle-glow">Joshua Lomond</h1>
+        <p className="text-xl text-blue-100">
           Full-Stack Developer | Computer Science Student | Open-Source
           Contributor
         </p>

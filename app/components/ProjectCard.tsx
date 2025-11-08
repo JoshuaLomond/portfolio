@@ -20,10 +20,10 @@ export default function ProjectCard({
   return (
     <div className="flex flex-col justify-between rounded-lg border border-gray-200 bg-[var(--secondary-light)] p-6 shadow-md transition-all duration-300 hover:scale-105 hover:border-[var(--primary-light)] hover:shadow-xl dark:border-gray-700 dark:bg-[var(--secondary-dark)] dark:hover:border-[var(--primary-dark)]">
       <div>
-        <h3 className="text-2xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)]">
+        <h3 className="text-[var(--text-light)] dark:text-[var(--text-dark)]">
           {title}
         </h3>
-        <p className="mt-3 text-gray-700 dark:text-gray-300">{description}</p>
+        <p className="text-gray-700 dark:text-gray-300">{description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span

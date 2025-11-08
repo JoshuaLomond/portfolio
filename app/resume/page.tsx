@@ -37,7 +37,7 @@ function ResumeSection({
 }) {
   return (
     <section className="mt-8">
-      <h2 className="mb-4 text-3xl font-bold text-[var(--primary-light)] dark:text-[var(--primary-dark)]">
+      <h2 className="mb-4 text-[var(--primary-light)] dark:text-[var(--primary-dark)]">
         {title}
       </h2>
       <div className="border-l-4 border-[var(--primary-light)] pl-6 dark:border-[var(--primary-dark)]">
@@ -62,14 +62,12 @@ function ResumeEntry({
   return (
     <div className="mt-6">
       <div className="flex flex-col justify-between md:flex-row">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-          {title}
-        </h3>
+        <h3 className="text-gray-900 dark:text-white">{title}</h3>
         <span className="text-lg font-medium text-gray-600 dark:text-gray-400">
           {date}
         </span>
       </div>
-      <p className="text-lg font-medium text-gray-600 dark:text-gray-400">
+      <p className="mb-0 text-lg font-medium text-gray-600 dark:text-gray-400">
         {location}
       </p>
       <ul className="mt-2 ml-4 list-disc space-y-2 text-gray-700 dark:text-gray-300">
@@ -96,10 +94,8 @@ export default function ResumePage() {
         <div className="md:col-span-2">
           {/* === RESUME HEADER === */}
           <div className="text-center md:text-left">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
-              JOSHUA LOMOND
-            </h1>
-            <p className="mt-2 text-xl font-medium text-gray-700 dark:text-gray-300">
+            <h1 className="text-gray-900 dark:text-white">JOSHUA LOMOND</h1>
+            <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
               Full-Stack Developer & Computer Science Student
             </p>
           </div>
@@ -208,9 +204,7 @@ export default function ResumePage() {
         <div className="space-y-8">
           {/* === CONTACT INFO === */}
           <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-            <h3 className="mb-4 text-xl font-semibold dark:text-white">
-              Contact Information
-            </h3>
+            <h3 className="mb-4 dark:text-white">Contact Information</h3>
             <div className="space-y-3 text-gray-700 dark:text-gray-300">
               <span className="flex items-center gap-3">
                 <Mail size={18} /> josh@joshlomond.dev
@@ -245,14 +239,10 @@ export default function ResumePage() {
 
           {/* === TECHNICAL SKILLS === */}
           <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-            <h3 className="mb-4 text-xl font-semibold dark:text-white">
-              Technical Skills
-            </h3>
+            <h3 className="mb-4 dark:text-white">Technical Skills</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="mb-2 font-semibold dark:text-white">
-                  Databases
-                </h4>
+                <h4 className="mb-2 dark:text-white">Databases</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="SQL" />
                   <SkillTag skill="MySQL" />
@@ -262,9 +252,7 @@ export default function ResumePage() {
                 </div>
               </div>
               <div>
-                <h4 className="mb-2 font-semibold dark:text-white">
-                  Programming Languages
-                </h4>
+                <h4 className="mb-2 dark:text-white">Programming Languages</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Java" />
                   <SkillTag skill="Python" />
@@ -273,9 +261,7 @@ export default function ResumePage() {
                 </div>
               </div>
               <div>
-                <h4 className="mb-2 font-semibold dark:text-white">
-                  IT Technologies
-                </h4>
+                <h4 className="mb-2 dark:text-white">IT Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Virtualization" />
                   <SkillTag skill="Storage Systems" />
@@ -283,9 +269,7 @@ export default function ResumePage() {
                 </div>
               </div>
               <div>
-                <h4 className="mb-2 font-semibold dark:text-white">
-                  Tools & Frameworks
-                </h4>
+                <h4 className="mb-2 dark:text-white">Tools & Frameworks</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="PowerShell" />
                   <SkillTag skill="Shell Scripting" />
@@ -299,9 +283,7 @@ export default function ResumePage() {
 
           {/* === INTERPERSONAL SKILLS === */}
           <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-            <h3 className="mb-4 text-xl font-semibold dark:text-white">
-              Interpersonal Skills
-            </h3>
+            <h3 className="mb-4 dark:text-white">Interpersonal Skills</h3>
             <ul className="list-disc space-y-1 pl-5 text-gray-700 dark:text-gray-300">
               <li>Strong work ethic & collaboration</li>
               <li>Effective communication</li>

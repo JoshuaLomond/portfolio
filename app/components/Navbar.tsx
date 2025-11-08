@@ -20,10 +20,10 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          className="flex items-center space-x-2 text-2xl font-bold text-[var(--primary-light)] dark:text-[var(--primary-dark)]"
+          className="flex items-center space-x-2 text-[var(--primary-light)] dark:text-[var(--primary-dark)]"
         >
           <Image src="/icon.svg" alt="Logo" width={32} height={32} />
-          <span>JL</span>
+          <span className="text-2xl font-bold">JL</span>
         </Link>
         <div className="hidden space-x-6 md:flex">
           {navLinks.map((link) => (

@@ -7,10 +7,10 @@
     --background-dark: #111827;
     --text-light: #1f2937;
     --text-dark: #f9fafb;
-    --primary-light: #1e40af;
-    --primary-dark: #60a5fa;
+    --primary-light: #2563eb;
+    --primary-dark: #3b82f6;
     --secondary-light: #f3f4f6;
-    --secondary-dark: #1f2937;
+    --secondary-dark: #374151;
   }
 }
 
@@ -18,7 +18,48 @@
   for light/dark mode.
 */
 body {
+  @apply text-base leading-relaxed; /* Default text size and line height */
   @apply bg-[var(--background-light)] text-[var(--text-light)] transition-colors duration-200 dark:bg-[var(--background-dark)] dark:text-[var(--text-dark)];
+}
+
+/* Headings */
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl font-bold leading-snug;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl font-semibold leading-normal;
+}
+
+h4 {
+  @apply text-xl md:text-2xl font-semibold;
+}
+
+h5 {
+  @apply text-lg md:text-xl font-medium;
+}
+
+h6 {
+  @apply text-base md:text-lg font-medium;
+}
+
+/* Paragraphs */
+p {
+  @apply mb-4; /* Add some bottom margin to paragraphs */
+}
+
+/* Smaller text for details, captions, etc. */
+.text-small {
+  @apply text-sm;
+}
+
+/* Larger text for emphasis */
+.text-large {
+  @apply text-lg;
 }
 
 .dark body {
