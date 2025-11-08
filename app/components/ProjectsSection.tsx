@@ -1,8 +1,24 @@
 "use client";
 
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/projects";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function ProjectsSection() {
   return (
@@ -11,18 +27,25 @@ export default function ProjectsSection() {
         <h2 className="text-[var(--text-light)] dark:text-[var(--text-dark)]">
           My Projects
         </h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <motion.div
+          className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              githubUrl={project.githubUrl}
-              liveUrl={project.liveUrl}
-            />
+            <motion.div key={project.title} variants={itemVariants}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                githubUrl={project.githubUrl}
+                liveUrl={project.liveUrl}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </AnimatedSection>
   );
