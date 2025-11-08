@@ -12,10 +12,16 @@ import {
 interface EmailTemplateProps {
   name: string;
   email: string;
+  subject: string;
   message: string;
 }
 
-export const EmailTemplate = ({ name, email, message }: EmailTemplateProps) => (
+export const EmailTemplate = ({
+  name,
+  email,
+  subject,
+  message,
+}: EmailTemplateProps) => (
   <Html lang="en" dir="ltr">
     <Head>
       <title>Contact Form Submission</title>
@@ -48,6 +54,11 @@ export const EmailTemplate = ({ name, email, message }: EmailTemplateProps) => (
       <Row>
         <Text>
           <strong>Email:</strong> {email}
+        </Text>
+      </Row>
+      <Row>
+        <Text>
+          <strong>Subject:</strong> {subject}
         </Text>
       </Row>
       <Row>

@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function ContactSection() {
+export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
 
@@ -18,13 +19,14 @@ export default function ContactSection() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, email, subject, message }),
     });
 
     if (res.ok) {
       setStatus("Your message has been sent!");
       setName("");
       setEmail("");
+      setSubject("");
       setMessage("");
     } else {
       setStatus("Failed to send message.");
@@ -32,17 +34,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="mt-20 text-center">
-      <h2 className="text-gray-900 dark:text-white">Get In Touch</h2>
-      <p className="text-lg text-gray-700 dark:text-gray-300">
+    <section className="container mx-auto px-4 py-20 text-center">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+        Contact Me
+      </h1>
+      <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
         I'm currently open to new opportunities. Feel free to send me a message!
       </p>
       <motion.form
         onSubmit={handleSubmit}
         className="mt-8 mx-auto max-w-lg text-left"
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <div className="mb-4">
@@ -73,6 +76,22 @@ export default function ContactSection() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="subject"
+            className="block text-gray-700 dark:text-gray-300 mb-2"
+          >
+            Subject
+          </label>
+          <input
+            type="text"
+            id="subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

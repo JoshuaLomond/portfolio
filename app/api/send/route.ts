@@ -4,21 +4,23 @@ import { Resend } from "resend";
 interface RequestBody {
   name: string;
   email: string;
+  subject: string;
   message: string;
 }
 export async function POST(request: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    const { name, email, message } = (await request.json()) as RequestBody;
-    console.log("Received request:", { name, email, message }); // Log incoming data
+    const { name, email, subject, message } =
+      (await request.json()) as RequestBody;
+    console.log("Received request:", { name, email, subject, message }); // Log incoming data
 
     const { data, error } = await resend.emails.send({
       from: "contact@joshlomond.dev",
       to: ["josh@joshlomond.dev"],
       subject: "PORTFOLIO CONTACT FORM",
       replyTo: email,
-      react: EmailTemplate({ name, email, message }),
+      react: EmailTemplate({ name, email, subject, message }),
     });
 
     if (error) {
