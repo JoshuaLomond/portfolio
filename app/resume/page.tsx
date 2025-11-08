@@ -5,8 +5,24 @@ import type { Metadata } from "next";
 
 // This sets the page title and description for the browser tab
 export const metadata: Metadata = {
-  title: "Resume | Josh's Portfolio",
-  description: "Joshua Lomond's professional resume.",
+  title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
+  description: "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
+  openGraph: {
+    title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
+    description: "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
+    url: "https://joshlomond.dev/resume", // Replace with your actual domain
+    siteName: "Joshua Lomond's Portfolio",
+    images: [
+      {
+        url: "https://joshlomond.dev/images/icon-512.png", // Replace with your actual domain
+        width: 512,
+        height: 512,
+        alt: "Joshua Lomond's Resume Icon",
+      },
+    ],
+    locale: "en_US",
+    type: "profile", // Or "article" if the resume is considered an article
+  },
 };
 
 // Helper component for styling resume sections
