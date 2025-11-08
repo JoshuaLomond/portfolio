@@ -13,14 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 import Navbar from "./components/Navbar";
-import { config } from "./config/config";
+import config from "./config/config";
 
 export const metadata: Metadata = {
   title: "Joshua Lomond | Full-Stack Developer Portfolio",
-  description: "Joshua Lomond's portfolio showcasing expertise in React, Next.js, Node.js, and full-stack web development. Explore projects, skills, and experience.",
+  description:
+    "Joshua Lomond's portfolio showcasing expertise in React, Next.js, Node.js, and full-stack web development. Explore projects, skills, and experience.",
   openGraph: {
     title: "Joshua Lomond | Full-Stack Developer Portfolio",
-    description: "Joshua Lomond's portfolio showcasing expertise in React, Next.js, Node.js, and full-stack web development. Explore projects, skills, and experience.",
+    description:
+      "Joshua Lomond's portfolio showcasing expertise in React, Next.js, Node.js, and full-stack web development. Explore projects, skills, and experience.",
     url: "https://joshlomond.dev",
     siteName: "Joshua Lomond's Portfolio",
     images: [
@@ -48,7 +50,10 @@ export default function RootLayout({
       >
         <Navbar />
         {/* JSON-LD Schema Markup */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
           {
             "@context": "https://schema.org",
             "@graph": [
@@ -79,7 +84,9 @@ export default function RootLayout({
               }
             ]
           }
-        `}} />
+        `,
+          }}
+        />
         <main className="h-[calc(100vh-64px)]">{children}</main>
       </body>
     </html>

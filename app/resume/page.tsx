@@ -6,10 +6,12 @@ import type { Metadata } from "next";
 // This sets the page title and description for the browser tab
 export const metadata: Metadata = {
   title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
-  description: "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
+  description:
+    "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
   openGraph: {
     title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
-    description: "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
+    description:
+      "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
     url: "https://joshlomond.dev/resume",
     siteName: "Joshua Lomond's Portfolio",
     images: [
@@ -133,13 +135,12 @@ export default function ResumePage() {
                 for Windows 10/11 devices.
               </li>
               <li>
-                Configure and troubleshoot mobile devices, including iPhones
-                and Android phones.
+                Configure and troubleshoot mobile devices, including iPhones and
+                Android phones.
               </li>
 
               <li>
-                Assisted users in setting up and using Office 365
-                applications.
+                Assisted users in setting up and using Office 365 applications.
               </li>
               <li>
                 Managed IT equipment lifecycle, including surplus equipment
@@ -176,8 +177,8 @@ export default function ResumePage() {
               date="June - December 2023"
             >
               <li>
-                Collaborated with a diverse team to provide high-quality
-                service while addressing and resolving customer concerns.
+                Collaborated with a diverse team to provide high-quality service
+                while addressing and resolving customer concerns.
               </li>
               <li>
                 Adapted quickly to unexpected situations such as equipment
@@ -195,8 +196,8 @@ export default function ResumePage() {
             >
               <li>
                 <strong>Relevant Coursework:</strong> Object-Oriented
-                Programming (Java, C#), Systems Programming (C, Linux),
-                Database Systems (MySQL), Data Structures, Algorithms, Software
+                Programming (Java, C#), Systems Programming (C, Linux), Database
+                Systems (MySQL), Data Structures, Algorithms, Software
                 Development, Software Engineering
               </li>
             </ResumeEntry>
@@ -220,7 +221,7 @@ export default function ResumePage() {
                   href="https://linkedin.com/in/joshua-lomond"
                   className="hover:underline"
                 >
-                  linkedin.com/in/JoshuaLomond
+                  linkedin.com/in/joshua-lomond
                 </a>
               </span>
               <span className="flex items-center gap-3">
