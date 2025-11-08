@@ -27,6 +27,8 @@ export default function ContactSection() {
         <button
           onClick={handleCopyEmail}
           className="rounded-md bg-gray-200 px-3 py-1 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+          aria-live="polite"
+          aria-label={copied ? "Email address copied" : "Copy email address"}
         >
           {copied ? "Copied!" : "Copy"}
         </button>

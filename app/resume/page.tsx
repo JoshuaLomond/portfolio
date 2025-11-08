@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
     description: "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
-    url: "https://joshlomond.dev/resume", // Replace with your actual domain
+    url: "https://joshlomond.dev/resume",
     siteName: "Joshua Lomond's Portfolio",
     images: [
       {
-        url: "https://joshlomond.dev/images/icon-512.png", // Replace with your actual domain
+        url: "https://joshlomond.dev/images/icon-512.png",
         width: 512,
         height: 512,
         alt: "Joshua Lomond's Resume Icon",
       },
     ],
     locale: "en_US",
-    type: "profile", // Or "article" if the resume is considered an article
+    type: "profile",
   },
 };
 
@@ -217,7 +217,7 @@ export default function ResumePage() {
               <span className="flex items-center gap-3">
                 <Linkedin size={18} />
                 <a
-                  href="https://linkedin.com/in/JoshuaLomond"
+                  href="https://linkedin.com/in/joshua-lomond"
                   className="hover:underline"
                 >
                   linkedin.com/in/JoshuaLomond
@@ -234,7 +234,7 @@ export default function ResumePage() {
               </span>
             </div>
             <a
-              href="/resume.pdf" // Assuming you have a PDF resume in the public folder
+              href="/resume.pdf"
               download
               className="mt-6 block w-full rounded-md bg-blue-600 py-2 text-center font-semibold text-white transition-colors hover:bg-blue-700"
             >

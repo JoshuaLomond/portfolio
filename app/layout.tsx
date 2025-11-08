@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joshua Lomond | Full-Stack Developer Portfolio",
     description: "Joshua Lomond's portfolio showcasing expertise in React, Next.js, Node.js, and full-stack web development. Explore projects, skills, and experience.",
-    url: "https://joshlomond.dev", // Replace with your actual domain
+    url: "https://joshlomond.dev",
     siteName: "Joshua Lomond's Portfolio",
     images: [
       {
-        url: "https://joshlomond.dev/images/icon-512.png", // Replace with your actual domain
+        url: "https://joshlomond.dev/images/icon-512.png",
         width: 512,
         height: 512,
         alt: "Joshua Lomond's Portfolio Logo",
@@ -54,26 +54,26 @@ export default function RootLayout({
             "@graph": [
               {
                 "@type": "Person",
-                "@id": "https://joshlomond.dev/#person", // Replace with your actual domain
+                "@id": "https://joshlomond.dev/#person",
                 "name": "Joshua Lomond",
-                "url": "https://joshlomond.dev", // Replace with your actual domain
+                "url": "https://joshlomond.dev",
                 "sameAs": [
                   "${config.socials.github}",
                   "${config.socials.linkedin}"
                 ],
-                "image": "https://joshlomond.dev/images/icon-512.png", // Replace with your actual domain
+                "image": "https://joshlomond.dev/images/icon-512.png",
                 "alumniOf": "Dalhousie University",
                 "jobTitle": "Full-Stack Developer",
                 "email": "mailto:${config.email}"
               },
               {
                 "@type": "WebSite",
-                "@id": "https://joshlomond.dev/#website", // Replace with your actual domain
-                "url": "https://joshlomond.dev", // Replace with your actual domain
+                "@id": "https://joshlomond.dev/#website",
+                "url": "https://joshlomond.dev",
                 "name": "Joshua Lomond's Portfolio",
                 "description": "Joshua Lomond's portfolio showcasing expertise in React, Next.js, Node.js, and full-stack web development. Explore projects, skills, and experience.",
                 "publisher": {
-                  "@id": "https://joshlomond.dev/#person" // Replace with your actual domain
+                  "@id": "https://joshlomond.dev/#person"
                 },
                 "inLanguage": "en-US"
               }
