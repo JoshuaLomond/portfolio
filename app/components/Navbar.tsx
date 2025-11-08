@@ -14,8 +14,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 shadow-md backdrop-blur-md dark:bg-gray-900/80">
-      <nav className="container mx-auto flex max-w-4xl items-center justify-between p-4" aria-label="Main navigation">
-        <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-[var(--primary-light)] dark:text-[var(--primary-dark)]">
+      <nav
+        className="container mx-auto flex max-w-4xl items-center justify-between p-4"
+        aria-label="Main navigation"
+      >
+        <Link
+          href="/"
+          className="flex items-center space-x-2 text-2xl font-bold text-[var(--primary-light)] dark:text-[var(--primary-dark)]"
+        >
           <Image src="/icon.svg" alt="Logo" width={32} height={32} />
           <span>JL</span>
         </Link>

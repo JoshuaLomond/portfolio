@@ -17,8 +17,7 @@ export default function ContactSection() {
         Get In Touch
       </h2>
       <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-        I'm currently open to new opportunities. Feel free to send me an
-        email!
+        I'm currently open to new opportunities. Feel free to send me an email!
       </p>
       <div className="mt-4 flex items-center justify-center space-x-2">
         <span className="text-lg text-gray-700 dark:text-gray-300">

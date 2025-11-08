@@ -30,13 +30,16 @@ body {
 
 @keyframes glowing {
   0% {
-    text-shadow: 0 0 5px var(--primary-light), 0 0 10px var(--primary-light), 0 0 15px var(--primary-light);
+    text-shadow: 0 0 5px var(--primary-light), 0 0 10px var(--primary-light),
+      0 0 15px var(--primary-light);
   }
   50% {
-    text-shadow: 0 0 20px var(--primary-light), 0 0 30px var(--primary-light), 0 0 40px var(--primary-light);
+    text-shadow: 0 0 20px var(--primary-light), 0 0 30px var(--primary-light),
+      0 0 40px var(--primary-light);
   }
   100% {
-    text-shadow: 0 0 5px var(--primary-light), 0 0 10px var(--primary-light), 0 0 15px var(--primary-light);
+    text-shadow: 0 0 5px var(--primary-light), 0 0 10px var(--primary-light),
+      0 0 15px var(--primary-light);
   }
 }
 
@@ -46,12 +49,15 @@ body {
 
 @keyframes glowing-dark {
   0% {
-    text-shadow: 0 0 5px var(--primary-dark), 0 0 10px var(--primary-dark), 0 0 15px var(--primary-dark);
+    text-shadow: 0 0 5px var(--primary-dark), 0 0 10px var(--primary-dark),
+      0 0 15px var(--primary-dark);
   }
   50% {
-    text-shadow: 0 0 20px var(--primary-dark), 0 0 30px var(--primary-dark), 0 0 40px var(--primary-dark);
+    text-shadow: 0 0 20px var(--primary-dark), 0 0 30px var(--primary-dark),
+      0 0 40px var(--primary-dark);
   }
   100% {
-    text-shadow: 0 0 5px var(--primary-dark), 0 0 10px var(--primary-dark), 0 0 15px var(--primary-dark);
+    text-shadow: 0 0 5px var(--primary-dark), 0 0 10px var(--primary-dark),
+      0 0 15px var(--primary-dark);
   }
 }

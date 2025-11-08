@@ -1,7 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import { config } from "../config/config";
+import config from "../config/config";
 import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
