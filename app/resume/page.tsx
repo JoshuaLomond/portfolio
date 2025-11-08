@@ -1,30 +1,23 @@
 // app/resume/page.tsx
-import Link from "next/link";
-import { Home, Mail, Linkedin, Github } from "lucide-react";
-import type { Metadata } from "next";
+"use client";
 
-// This sets the page title and description for the browser tab
-export const metadata: Metadata = {
-  title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
-  description:
-    "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
-  openGraph: {
-    title: "Joshua Lomond - Professional Resume | Full-Stack Developer",
-    description:
-      "View Joshua Lomond's professional resume, detailing work experience, education, and technical skills in full-stack development, databases, and IT support.",
-    url: "https://joshlomond.dev/resume",
-    siteName: "Joshua Lomond's Portfolio",
-    images: [
-      {
-        url: "https://joshlomond.dev/images/icon-512.png",
-        width: 512,
-        height: 512,
-        alt: "Joshua Lomond's Resume Icon",
-      },
-    ],
-    locale: "en_US",
-    type: "profile",
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Home, Mail, Linkedin, Github } from "lucide-react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 
 // Helper component for styling resume sections
@@ -36,14 +29,14 @@ function ResumeSection({
   children: React.ReactNode;
 }) {
   return (
-    <section className="mt-8">
+    <motion.section variants={itemVariants} className="mt-8">
       <h2 className="mb-4 text-[var(--primary-light)] dark:text-[var(--primary-dark)]">
         {title}
       </h2>
       <div className="border-l-4 border-[var(--primary-light)] pl-6 dark:border-[var(--primary-dark)]">
         {children}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -60,7 +53,7 @@ function ResumeEntry({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mt-6">
+    <motion.div variants={itemVariants} className="mt-6">
       <div className="flex flex-col justify-between md:flex-row">
         <h3 className="text-gray-900 dark:text-white">{title}</h3>
         <span className="text-lg font-medium text-gray-600 dark:text-gray-400">
@@ -73,46 +66,57 @@ function ResumeEntry({
       <ul className="mt-2 ml-4 list-disc space-y-2 text-gray-700 dark:text-gray-300">
         {children}
       </ul>
-    </div>
+    </motion.div>
   );
 }
 
 // Helper for skill tags
 function SkillTag({ skill }: { skill: string }) {
   return (
-    <span className="rounded-full bg-[var(--primary-light)] px-3 py-1 text-sm font-medium text-white dark:bg-[var(--primary-dark)] dark:text-gray-900">
+    <motion.span
+      variants={itemVariants}
+      className="rounded-full bg-[var(--primary-light)] px-3 py-1 text-sm font-medium text-white dark:bg-[var(--primary-dark)] dark:text-gray-900"
+    >
       {skill}
-    </span>
+    </motion.span>
   );
 }
 
 export default function ResumePage() {
   return (
     <main className="container mx-auto max-w-7xl flex-grow px-4 pt-12 pb-24">
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+      <motion.div
+        className="grid grid-cols-1 gap-12 md:grid-cols-3"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {/* === LEFT COLUMN === */}
-        <div className="md:col-span-2">
+        <motion.div variants={itemVariants} className="md:col-span-2">
           {/* === RESUME HEADER === */}
-          <div className="text-center md:text-left">
+          <motion.div
+            variants={itemVariants}
+            className="text-center md:text-left"
+          >
             <h1 className="text-gray-900 dark:text-white">JOSHUA LOMOND</h1>
             <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
               Full-Stack Developer & Computer Science Student
             </p>
-          </div>
+          </motion.div>
 
           {/* === PROFESSIONAL SUMMARY === */}
           <ResumeSection title="Summary">
-            <p className="mb-2">
+            <motion.p variants={itemVariants} className="mb-2">
               Motivated Computer Science student with experience in database
               management, full-stack development, and IT support, seeking to
               apply strong technical and problem-solving skills in database
               administration and IT infrastructure.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p variants={itemVariants}>
               Proficient in SQL, Oracle, and database documentation, with
               experience working in agile environments and optimizing business
               processes.
-            </p>
+            </motion.p>
           </ResumeSection>
 
           {/* === PROFESSIONAL EXPERIENCE === */}
@@ -198,12 +202,15 @@ export default function ResumePage() {
               </li>
             </ResumeEntry>
           </ResumeSection>
-        </div>
+        </motion.div>
 
         {/* === RIGHT COLUMN === */}
-        <div className="space-y-8">
+        <motion.div variants={itemVariants} className="space-y-8">
           {/* === CONTACT INFO === */}
-          <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
+          <motion.div
+            variants={itemVariants}
+            className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800"
+          >
             <h3 className="mb-4 dark:text-white">Contact Information</h3>
             <div className="space-y-3 text-gray-700 dark:text-gray-300">
               <span className="flex items-center gap-3">
@@ -235,13 +242,16 @@ export default function ResumePage() {
             >
               Download PDF
             </a>
-          </div>
+          </motion.div>
 
           {/* === TECHNICAL SKILLS === */}
-          <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
+          <motion.div
+            variants={itemVariants}
+            className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800"
+          >
             <h3 className="mb-4 dark:text-white">Technical Skills</h3>
-            <div className="space-y-4">
-              <div>
+            <motion.div variants={containerVariants} className="space-y-4">
+              <motion.div variants={itemVariants}>
                 <h4 className="mb-2 dark:text-white">Databases</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="SQL" />
@@ -250,8 +260,8 @@ export default function ResumePage() {
                   <SkillTag skill="Oracle" />
                   <SkillTag skill="SQL Server" />
                 </div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
                 <h4 className="mb-2 dark:text-white">Programming Languages</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Java" />
@@ -259,16 +269,16 @@ export default function ResumePage() {
                   <SkillTag skill="JavaScript" />
                   <SkillTag skill="C" />
                 </div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
                 <h4 className="mb-2 dark:text-white">IT Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Virtualization" />
                   <SkillTag skill="Storage Systems" />
                   <SkillTag skill="Operating Systems (Windows, Linux)" />
                 </div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
                 <h4 className="mb-2 dark:text-white">Tools & Frameworks</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="PowerShell" />
@@ -277,12 +287,15 @@ export default function ResumePage() {
                   <SkillTag skill="Git" />
                   <SkillTag skill="Agile methodologies" />
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           {/* === INTERPERSONAL SKILLS === */}
-          <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
+          <motion.div
+            variants={itemVariants}
+            className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800"
+          >
             <h3 className="mb-4 dark:text-white">Interpersonal Skills</h3>
             <ul className="list-disc space-y-1 pl-5 text-gray-700 dark:text-gray-300">
               <li>Strong work ethic & collaboration</li>
@@ -290,9 +303,9 @@ export default function ResumePage() {
               <li>Skilled in troubleshooting</li>
               <li>Detail-oriented</li>
             </ul>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </main>
   );
 }
