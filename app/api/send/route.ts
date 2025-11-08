@@ -4,9 +4,15 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+interface RequestBody {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message } = (await request.json()) as RequestBody;
     console.log("Received request:", { name, email, message }); // Log incoming data
 
     const { data, error } = await resend.emails.send({
