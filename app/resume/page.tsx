@@ -214,7 +214,13 @@ export default function ResumePage() {
             <h3 className="mb-4 dark:text-white">Contact Information</h3>
             <div className="space-y-3 text-gray-700 dark:text-gray-300">
               <span className="flex items-center gap-3">
-                <Mail size={18} /> josh@joshlomond.dev
+                <Mail size={18} />
+                <a
+                  href="mailto:josh@joshlomond.dev"
+                  className="hover:underline"
+                >
+                  josh@joshlomond.dev
+                </a>
               </span>
               <span className="flex items-center gap-3">
                 <Linkedin size={18} />
