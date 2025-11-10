@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import ProjectCard from "./ProjectCard";
-import { projects } from "../data/projects";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,7 +19,18 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function ProjectsSection() {
+// Define the type (can be imported from home-client.tsx if you move it)
+type Project = {
+  _id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl: string;
+  liveUrl?: string;
+};
+
+// Accept projects as a prop
+export default function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
     <AnimatedSection>
       <section className="mt-20">
@@ -34,8 +44,9 @@ export default function ProjectsSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
+          {/* Map over the projects prop */}
           {projects.map((project) => (
-            <motion.div key={project.title} variants={itemVariants}>
+            <motion.div key={project._id} variants={itemVariants}>
               <ProjectCard
                 title={project.title}
                 description={project.description}
