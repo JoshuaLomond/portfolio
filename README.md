@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Joshua Lomond's Portfolio
+
+This is the source code for my personal portfolio website, built with Next.js, Tailwind CSS, and Sanity.io.
+
+## Features
+
+- **Dynamic Content:** Portfolio projects are managed through a headless CMS (Sanity.io).
+- **Responsive Design:** Fully responsive layout for all devices.
+- **Modern Tech Stack:** Built with the latest features of Next.js and React.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **CMS:** [Sanity.io](https://www.sanity.io/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or later)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/your-username/portfolio.git
+   cd portfolio
+   ```
 
-## Learn More
+2. **Install dependencies for the Next.js app:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Install dependencies for the Sanity Studio:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   cd portfolio-studio
+   npm install
+   cd ..
+   ```
 
-## Deploy on Vercel
+4. **Set up environment variables:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Create a `.env.local` file in the root directory and add the following variables. You can get these from your Sanity project settings.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```plaintext
+   NEXT_PUBLIC_SANITY_PROJECT_ID="your-project-id"
+   NEXT_PUBLIC_SANITY_DATASET="production"
+   NEXT_PUBLIC_SANITY_USE_CDN="true"
+   ```
+
+## Running the Development Servers
+
+You need to run two development servers simultaneously: one for the Next.js frontend and one for the Sanity Studio.
+
+1. **Run the Next.js app:**
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:3000`.
+
+2. **Run the Sanity Studio:**
+   In a separate terminal, navigate to the `portfolio-studio` directory and run:
+
+   ```bash
+   cd portfolio-studio
+   npm run dev
+   ```
+
+   The Sanity Studio will be available at `http://localhost:3333`.
+
+## Project Structure
+
+- `app/`: The Next.js application source code.
+- `public/`: Static assets for the Next.js app.
+- `portfolio-studio/`: The Sanity Studio source code.
+  - `schemaTypes/`: Content schemas for Sanity.
