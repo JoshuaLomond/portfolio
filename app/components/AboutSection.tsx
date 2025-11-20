@@ -1,10 +1,17 @@
 "use client";
 
-
-
 const skills = [
-  "React", "Next.js", "TypeScript", "Node.js",
-  "Tailwind CSS", "PostgreSQL", "GraphQL", "AWS"
+  "Node.js",
+  "React",
+  "Vite",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "Electron",
+  "Tailwind CSS",
+  "Python",
+  "Cloudflare",
+  "Vercel",
 ];
 
 export default function AboutSection() {
@@ -24,14 +31,14 @@ export default function AboutSection() {
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                 <p>
-                  Hello! I'm a passionate developer with a love for building efficient
-                  and scalable web applications. I specialize in React, Next.js, and
-                  Node.js.
+                  Hello! I'm a passionate developer with a love for building
+                  efficient and scalable web applications. I specialize in
+                  React, Next.js, and Node.js.
                 </p>
                 <p>
-                  I'm always eager to learn new technologies and solve complex problems.
-                  When I'm not coding, you can find me exploring open source projects
-                  or writing technical articles.
+                  I'm always eager to learn new technologies and solve complex
+                  problems. When I'm not coding, you can find me exploring open
+                  source projects or writing technical articles.
                 </p>
               </div>
 
