@@ -10,7 +10,7 @@ export default function SocialLinks({ className }: { className?: string }) {
         target="_blank"
         rel="noopener noreferrer"
         className={
-          className || "text-blue-200 transition-colors hover:text-white"
+          className || "text-slate-400 transition-colors hover:text-cyan-400"
         }
         aria-label="GitHub Profile"
       >
@@ -21,7 +21,7 @@ export default function SocialLinks({ className }: { className?: string }) {
         target="_blank"
         rel="noopener noreferrer"
         className={
-          className || "text-blue-200 transition-colors hover:text-white"
+          className || "text-slate-400 transition-colors hover:text-cyan-400"
         }
         aria-label="LinkedIn Profile"
       >
@@ -30,7 +30,7 @@ export default function SocialLinks({ className }: { className?: string }) {
       <a
         href={`mailto:${config.email}`}
         className={
-          className || "text-blue-200 transition-colors hover:text-white"
+          className || "text-slate-400 transition-colors hover:text-cyan-400"
         }
         aria-label="Send an Email"
       >

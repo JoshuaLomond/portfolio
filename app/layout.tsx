@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  preload: false,
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  preload: false,
+  display: "swap",
 });
 
 import Navbar from "./components/Navbar";
@@ -46,10 +46,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${inter.variable} antialiased bg-slate-950 text-slate-100 selection:bg-cyan-500/30 relative min-h-screen`}
       >
+        {/* Global Background Elements */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-500/10 rounded-full blur-[100px] animate-float" />
+          <div
+            className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-violet-500/10 rounded-full blur-[100px] animate-float"
+            style={{ animationDelay: "-3s" }}
+          />
+        </div>
+
         <Navbar />
         {/* JSON-LD Schema Markup */}
         <script
@@ -89,7 +98,7 @@ export default function RootLayout({
         `,
           }}
         />
-        <main className="h-[calc(100vh-64px)]">{children}</main>
+        <main className="relative">{children}</main>
       </body>
     </html>
   );

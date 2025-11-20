@@ -18,8 +18,8 @@ type Project = {
 
 export default function HomeClient({ projects }: { projects: Project[] }) {
   return (
-    <div className="">
-      <main className="container mx-auto max-w-4xl flex-grow px-4 py-12 md:py-24">
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow pt-20">
         <HeroSection />
         <AboutSection />
         <ProjectsSection projects={projects} />

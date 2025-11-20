@@ -3,54 +3,88 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SocialLinks from "./SocialLinks";
+import { ArrowRight, Download } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring" as const, stiffness: 50 }
+  },
 };
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden rounded-lg bg-gradient-to-br from-[var(--primary-light)] to-blue-500 py-20 text-center text-white shadow-lg dark:from-[var(--primary-dark)] dark:to-blue-800">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden py-16">
       <motion.div
-        className="relative z-10"
+        className="relative z-10 container mx-auto px-4 text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 variants={itemVariants} className="animate-subtle-glow">
-          Joshua Lomond
+        <motion.div variants={itemVariants} className="mb-6 inline-block">
+          <span className="px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium tracking-wide backdrop-blur-sm">
+            Available for Hire
+          </span>
+        </motion.div>
+
+        <motion.h1 variants={itemVariants} className="mb-6">
+          <span className="block text-5xl md:text-7xl font-bold tracking-tight text-slate-100 mb-2">
+            Hi, I'm Joshua
+          </span>
+          <span className="block text-4xl md:text-6xl font-bold text-gradient">
+            Full-Stack Developer
+          </span>
         </motion.h1>
-        <motion.p variants={itemVariants} className="text-xl text-blue-100">
-          Full-Stack Developer | Computer Science Student | Open-Source
-          Contributor
+
+        <motion.p
+          variants={itemVariants}
+          className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed"
+        >
+          I build accessible, pixel-perfect, and performant web experiences.
+          Passionate about open-source and modern web technologies.
         </motion.p>
+
         <motion.div
           variants={itemVariants}
-          className="mt-8 flex justify-center space-x-6"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+        >
+          <Link
+            href="#projects"
+            className="group relative px-8 py-3.5 bg-cyan-500 text-slate-950 font-semibold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:scale-105"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              View Projects <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </span>
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          </Link>
+
+          <Link
+            href="/resume"
+            className="group px-8 py-3.5 bg-slate-800/50 border border-slate-700 text-slate-200 font-semibold rounded-full hover:bg-slate-800 transition-all hover:border-cyan-500/50 flex items-center gap-2"
+          >
+            <Download className="w-4 h-4" /> Resume
+          </Link>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center"
         >
           <SocialLinks />
         </motion.div>
-        {/* === RESUME BUTTON === */}
-        <motion.div variants={itemVariants} className="mt-10">
-          <Link
-            href="/resume"
-            className="rounded-md bg-white px-7 py-3 text-lg font-medium text-[var(--primary-light)] shadow-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
-          >
-            View My Resume
-          </Link>
-        </motion.div>
-        {/* ============================== */}
       </motion.div>
     </section>
   );

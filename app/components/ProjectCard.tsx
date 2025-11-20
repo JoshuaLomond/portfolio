@@ -1,14 +1,14 @@
-// app/components/ProjectCard.tsx
-import { Github, ExternalLink } from "lucide-react";
+"use client";
 
-// Define the properties (props) that this component will accept
-type ProjectCardProps = {
+import { Github, ExternalLink, Folder } from "lucide-react";
+
+interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
   githubUrl: string;
   liveUrl?: string;
-};
+}
 
 export default function ProjectCard({
   title,
@@ -18,46 +18,57 @@ export default function ProjectCard({
   liveUrl,
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col justify-between rounded-lg border border-gray-200 bg-[var(--secondary-light)] p-6 shadow-md transition-all duration-300 hover:scale-105 hover:border-[var(--primary-light)] hover:shadow-xl dark:border-gray-700 dark:bg-[var(--secondary-dark)] dark:hover:border-[var(--primary-dark)]">
-      <div>
-        <h3 className="text-[var(--text-light)] dark:text-[var(--text-dark)]">
+    <div className="group relative h-full">
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur opacity-20" />
+      <div className="relative h-full glass-card rounded-2xl p-8 flex flex-col transition-transform duration-300 group-hover:-translate-y-2">
+        <div className="flex justify-between items-start mb-6">
+          <div className="p-3 bg-cyan-500/10 rounded-lg text-cyan-400">
+            <Folder size={24} />
+          </div>
+          <div className="flex gap-4">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                aria-label="View GitHub Repository"
+              >
+                <Github size={20} />
+              </a>
+            )}
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                aria-label="View Live Project"
+              >
+                <ExternalLink size={20} />
+              </a>
+            )}
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors">
           {title}
         </h3>
-        <p className="text-gray-700 dark:text-gray-300">{description}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
+
+        <p className="text-slate-400 mb-6 flex-grow leading-relaxed">
+          {description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-auto">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-[var(--primary-light)] dark:bg-blue-900/50 dark:text-[var(--primary-dark)]"
+              className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-800 text-cyan-300/80"
             >
               {tag}
             </span>
           ))}
         </div>
-      </div>
-      <div className="mt-6 flex items-center space-x-4">
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-gray-600 transition-colors hover:text-[var(--primary-light)] dark:text-gray-400 dark:hover:text-[var(--primary-dark)]"
-          aria-label={`${title} GitHub Repository`}
-        >
-          <Github size={20} />
-          <span className="ml-2">Code</span>
-        </a>
-        {liveUrl && ( // This link will only show if you provide a 'liveUrl' prop
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-gray-600 transition-colors hover:text-[var(--primary-light)] dark:text-gray-400 dark:hover:text-[var(--primary-dark)]"
-            aria-label={`${title} Live Demo`}
-          >
-            <ExternalLink size={20} />
-            <span className="ml-2">Live Demo</span>
-          </a>
-        )}
       </div>
     </div>
   );

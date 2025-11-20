@@ -1,16 +1,15 @@
 // app/resume/page.tsx
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Home, Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Download, MapPin, Calendar } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -29,11 +28,12 @@ function ResumeSection({
   children: React.ReactNode;
 }) {
   return (
-    <motion.section variants={itemVariants} className="mt-8">
-      <h2 className="mb-4 text-[var(--primary-light)] dark:text-[var(--primary-dark)]">
+    <motion.section variants={itemVariants} className="mt-10">
+      <h2 className="mb-6 text-2xl font-bold text-slate-100 flex items-center gap-3">
+        <span className="w-8 h-1 bg-cyan-500 rounded-full"></span>
         {title}
       </h2>
-      <div className="border-l-4 border-[var(--primary-light)] pl-6 dark:border-[var(--primary-dark)]">
+      <div className="pl-4 border-l border-slate-800 space-y-8">
         {children}
       </div>
     </motion.section>
@@ -53,17 +53,20 @@ function ResumeEntry({
   children: React.ReactNode;
 }) {
   return (
-    <motion.div variants={itemVariants} className="mt-6">
-      <div className="flex flex-col justify-between md:flex-row">
-        <h3 className="text-gray-900 dark:text-white">{title}</h3>
-        <span className="text-lg font-medium text-gray-600 dark:text-gray-400">
-          {date}
+    <motion.div variants={itemVariants} className="relative pl-6">
+      <div className="absolute left-[-21px] top-1.5 w-3 h-3 rounded-full bg-cyan-500 border-4 border-slate-950" />
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+        <div>
+          <h3 className="text-xl font-semibold text-slate-200">{title}</h3>
+          <p className="text-cyan-400 font-medium flex items-center gap-2 text-sm mt-1">
+            <MapPin size={14} /> {location}
+          </p>
+        </div>
+        <span className="text-sm font-medium text-slate-500 bg-slate-900/50 px-3 py-1 rounded-full border border-slate-800 flex items-center gap-2 mt-2 sm:mt-0 w-fit">
+          <Calendar size={14} /> {date}
         </span>
       </div>
-      <p className="mb-0 text-lg font-medium text-gray-600 dark:text-gray-400">
-        {location}
-      </p>
-      <ul className="mt-2 ml-4 list-disc space-y-2 text-gray-700 dark:text-gray-300">
+      <ul className="mt-4 space-y-2 text-slate-400 list-disc list-outside ml-4">
         {children}
       </ul>
     </motion.div>
@@ -75,7 +78,7 @@ function SkillTag({ skill }: { skill: string }) {
   return (
     <motion.span
       variants={itemVariants}
-      className="rounded-full bg-[var(--primary-light)] px-3 py-1 text-sm font-medium text-white dark:bg-[var(--primary-dark)] dark:text-gray-900"
+      className="px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-500/50 hover:text-cyan-400 transition-colors cursor-default"
     >
       {skill}
     </motion.span>
@@ -84,39 +87,41 @@ function SkillTag({ skill }: { skill: string }) {
 
 export default function ResumePage() {
   return (
-    <main className="container mx-auto max-w-7xl flex-grow px-4 pt-12 pb-24">
+    <main className="container mx-auto max-w-6xl flex-grow px-4 pt-32 pb-24">
       <motion.div
-        className="grid grid-cols-1 gap-12 md:grid-cols-3"
+        className="grid grid-cols-1 gap-12 lg:grid-cols-3"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* === LEFT COLUMN === */}
-        <motion.div variants={itemVariants} className="md:col-span-2">
+        {/* === LEFT COLUMN (Main Content) === */}
+        <motion.div variants={itemVariants} className="lg:col-span-2 space-y-8">
           {/* === RESUME HEADER === */}
           <motion.div
             variants={itemVariants}
-            className="text-center md:text-left"
+            className="glass-card p-8 rounded-2xl border-l-4 border-cyan-500"
           >
-            <h1 className="text-gray-900 dark:text-white">JOSHUA LOMOND</h1>
-            <p className="text-xl font-medium text-gray-700 dark:text-gray-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-2 tracking-tight">JOSHUA LOMOND</h1>
+            <p className="text-xl text-cyan-400 font-medium">
               Full-Stack Developer & Computer Science Student
             </p>
           </motion.div>
 
           {/* === PROFESSIONAL SUMMARY === */}
           <ResumeSection title="Summary">
-            <motion.p variants={itemVariants} className="mb-2">
-              Motivated Computer Science student with experience in database
-              management, full-stack development, and IT support, seeking to
-              apply strong technical and problem-solving skills in database
-              administration and IT infrastructure.
-            </motion.p>
-            <motion.p variants={itemVariants}>
-              Proficient in SQL, Oracle, and database documentation, with
-              experience working in agile environments and optimizing business
-              processes.
-            </motion.p>
+            <motion.div variants={itemVariants} className="pl-6 text-slate-400 leading-relaxed text-lg">
+              <p className="mb-4">
+                Motivated Computer Science student with experience in database
+                management, full-stack development, and IT support, seeking to
+                apply strong technical and problem-solving skills in database
+                administration and IT infrastructure.
+              </p>
+              <p>
+                Proficient in SQL, Oracle, and database documentation, with
+                experience working in agile environments and optimizing business
+                processes.
+              </p>
+            </motion.div>
           </ResumeSection>
 
           {/* === PROFESSIONAL EXPERIENCE === */}
@@ -153,7 +158,7 @@ export default function ResumePage() {
             </ResumeEntry>
 
             <ResumeEntry
-              title="Software-Developer, BIO"
+              title="Software Developer, BIO"
               location="Fisheries & Oceans Canada"
               date="January - May 2024"
             >
@@ -204,61 +209,69 @@ export default function ResumePage() {
           </ResumeSection>
         </motion.div>
 
-        {/* === RIGHT COLUMN === */}
-        <motion.div variants={itemVariants} className="space-y-8">
+        {/* === RIGHT COLUMN (Sidebar) === */}
+        <motion.div variants={itemVariants} className="space-y-6 sticky top-24 self-start">
           {/* === CONTACT INFO === */}
           <motion.div
             variants={itemVariants}
-            className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800"
+            className="glass-card p-6 rounded-2xl"
           >
-            <h3 className="mb-4 dark:text-white">Contact Information</h3>
-            <div className="space-y-3 text-gray-700 dark:text-gray-300">
-              <span className="flex items-center gap-3">
-                <Mail size={18} />
-                <a
-                  href="mailto:josh@joshlomond.dev"
-                  className="hover:underline"
-                >
-                  josh@joshlomond.dev
-                </a>
-              </span>
-              <span className="flex items-center gap-3">
-                <Linkedin size={18} />
-                <a
-                  href="https://linkedin.com/in/joshua-lomond"
-                  className="hover:underline"
-                >
-                  linkedin.com/in/joshua-lomond
-                </a>
-              </span>
-              <span className="flex items-center gap-3">
-                <Github size={18} />
-                <a
-                  href="https://github.com/JoshuaLomond"
-                  className="hover:underline"
-                >
-                  github.com/JoshuaLomond
-                </a>
-              </span>
+            <h3 className="mb-6 text-lg font-semibold text-slate-100 border-b border-slate-800 pb-4">
+              Contact Information
+            </h3>
+            <div className="space-y-4 text-slate-400">
+              <a
+                href="mailto:josh@joshlomond.dev"
+                className="flex items-center gap-3 hover:text-cyan-400 transition-colors group"
+              >
+                <div className="p-2 rounded-lg bg-slate-800 group-hover:bg-cyan-500/20 transition-colors">
+                  <Mail size={18} className="text-cyan-400" />
+                </div>
+                <span className="text-sm">josh@joshlomond.dev</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/joshua-lomond"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-cyan-400 transition-colors group"
+              >
+                <div className="p-2 rounded-lg bg-slate-800 group-hover:bg-cyan-500/20 transition-colors">
+                  <Linkedin size={18} className="text-cyan-400" />
+                </div>
+                <span className="text-sm">linkedin.com/in/joshua-lomond</span>
+              </a>
+              <a
+                href="https://github.com/JoshuaLomond"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-cyan-400 transition-colors group"
+              >
+                <div className="p-2 rounded-lg bg-slate-800 group-hover:bg-cyan-500/20 transition-colors">
+                  <Github size={18} className="text-cyan-400" />
+                </div>
+                <span className="text-sm">github.com/JoshuaLomond</span>
+              </a>
             </div>
             <a
               href="/Joshua-Lomond-Resume.pdf"
               download
-              className="mt-6 block w-full rounded-md bg-blue-600 py-2 text-center font-semibold text-white transition-colors hover:bg-blue-700"
+              className="mt-8 flex items-center justify-center gap-2 w-full rounded-xl bg-cyan-500 py-3 text-center font-semibold text-slate-950 transition-all hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
             >
-              Download PDF
+              <Download size={18} /> Download PDF
             </a>
           </motion.div>
 
           {/* === TECHNICAL SKILLS === */}
           <motion.div
             variants={itemVariants}
-            className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800"
+            className="glass-card p-6 rounded-2xl"
           >
-            <h3 className="mb-4 dark:text-white">Technical Skills</h3>
-            <motion.div variants={containerVariants} className="space-y-4">
-              <motion.div variants={itemVariants}>
-                <h4 className="mb-2 dark:text-white">Databases</h4>
+            <h3 className="mb-6 text-lg font-semibold text-slate-100 border-b border-slate-800 pb-4">
+              Technical Skills
+            </h3>
+            <div className="space-y-6">
+              <div>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Databases</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="SQL" />
                   <SkillTag skill="MySQL" />
@@ -266,49 +279,35 @@ export default function ResumePage() {
                   <SkillTag skill="Oracle" />
                   <SkillTag skill="SQL Server" />
                 </div>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <h4 className="mb-2 dark:text-white">Programming Languages</h4>
+              </div>
+              <div>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Languages</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Java" />
                   <SkillTag skill="Python" />
                   <SkillTag skill="JavaScript" />
                   <SkillTag skill="C" />
                 </div>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <h4 className="mb-2 dark:text-white">IT Technologies</h4>
+              </div>
+              <div>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Virtualization" />
                   <SkillTag skill="Storage Systems" />
-                  <SkillTag skill="Operating Systems (Windows, Linux)" />
+                  <SkillTag skill="OS (Win/Linux)" />
                 </div>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <h4 className="mb-2 dark:text-white">Tools & Frameworks</h4>
+              </div>
+              <div>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Tools</h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="PowerShell" />
                   <SkillTag skill="Shell Scripting" />
                   <SkillTag skill="AWS" />
                   <SkillTag skill="Git" />
-                  <SkillTag skill="Agile methodologies" />
+                  <SkillTag skill="Agile" />
                 </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-
-          {/* === INTERPERSONAL SKILLS === */}
-          <motion.div
-            variants={itemVariants}
-            className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800"
-          >
-            <h3 className="mb-4 dark:text-white">Interpersonal Skills</h3>
-            <ul className="list-disc space-y-1 pl-5 text-gray-700 dark:text-gray-300">
-              <li>Strong work ethic & collaboration</li>
-              <li>Effective communication</li>
-              <li>Skilled in troubleshooting</li>
-              <li>Detail-oriented</li>
-            </ul>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>
