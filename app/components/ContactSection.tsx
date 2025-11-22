@@ -55,7 +55,9 @@ export default function ContactSection() {
               variants={itemVariants}
               className="text-lg text-slate-400 mb-10"
             >
-              I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              I'm currently open to new opportunities. Whether you have a
+              question or just want to say hi, I'll try my best to get back to
+              you!
             </motion.p>
 
             <motion.div
@@ -70,7 +72,11 @@ export default function ContactSection() {
                   className="ml-2 p-1.5 rounded-lg hover:bg-slate-800 transition-colors text-slate-500 hover:text-slate-200"
                   aria-label="Copy email"
                 >
-                  {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} />}
+                  {copied ? (
+                    <Check size={16} className="text-green-400" />
+                  ) : (
+                    <Copy size={16} />
+                  )}
                 </button>
               </div>
 

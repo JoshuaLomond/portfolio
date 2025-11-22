@@ -38,7 +38,8 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
               <span className="text-gradient">Featured Projects</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              Here are some of the projects I've worked on. Each one presented unique challenges and learning opportunities.
+              Here are some of the projects I've worked on. Each one presented
+              unique challenges and learning opportunities.
             </p>
           </div>
 

@@ -5,6 +5,7 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
 
 // Define the type for your project (you can make this more specific)
 type Project = {
@@ -26,6 +27,7 @@ export default function HomeClient({ projects }: { projects: Project[] }) {
         <ContactSection />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

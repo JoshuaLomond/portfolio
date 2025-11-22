@@ -2,7 +2,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Download, MapPin, Calendar } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  Download,
+  MapPin,
+  Calendar,
+} from "lucide-react";
+import BackToTop from "../components/BackToTop";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,9 +41,7 @@ function ResumeSection({
         <span className="w-8 h-1 bg-cyan-500 rounded-full"></span>
         {title}
       </h2>
-      <div className="pl-4 border-l border-slate-800 space-y-8">
-        {children}
-      </div>
+      <div className="pl-4 border-l border-slate-800 space-y-8">{children}</div>
     </motion.section>
   );
 }
@@ -101,7 +107,9 @@ export default function ResumePage() {
             variants={itemVariants}
             className="glass-card p-8 rounded-2xl border-l-4 border-cyan-500"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-2 tracking-tight">JOSHUA LOMOND</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-2 tracking-tight">
+              JOSHUA LOMOND
+            </h1>
             <p className="text-xl text-cyan-400 font-medium">
               Full-Stack Developer & Computer Science Student
             </p>
@@ -109,7 +117,10 @@ export default function ResumePage() {
 
           {/* === PROFESSIONAL SUMMARY === */}
           <ResumeSection title="Summary">
-            <motion.div variants={itemVariants} className="pl-6 text-slate-400 leading-relaxed text-lg">
+            <motion.div
+              variants={itemVariants}
+              className="pl-6 text-slate-400 leading-relaxed text-lg"
+            >
               <p className="mb-4">
                 Motivated Computer Science student with experience in database
                 management, full-stack development, and IT support, seeking to
@@ -210,7 +221,10 @@ export default function ResumePage() {
         </motion.div>
 
         {/* === RIGHT COLUMN (Sidebar) === */}
-        <motion.div variants={itemVariants} className="space-y-6 sticky top-24 self-start">
+        <motion.div
+          variants={itemVariants}
+          className="space-y-6 sticky top-24 self-start"
+        >
           {/* === CONTACT INFO === */}
           <motion.div
             variants={itemVariants}
@@ -271,7 +285,9 @@ export default function ResumePage() {
             </h3>
             <div className="space-y-6">
               <div>
-                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Databases</h4>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">
+                  Databases
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="SQL" />
                   <SkillTag skill="MySQL" />
@@ -281,7 +297,9 @@ export default function ResumePage() {
                 </div>
               </div>
               <div>
-                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Languages</h4>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">
+                  Languages
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Java" />
                   <SkillTag skill="Python" />
@@ -290,7 +308,9 @@ export default function ResumePage() {
                 </div>
               </div>
               <div>
-                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Technologies</h4>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">
+                  Technologies
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="Virtualization" />
                   <SkillTag skill="Storage Systems" />
@@ -298,7 +318,9 @@ export default function ResumePage() {
                 </div>
               </div>
               <div>
-                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">Tools</h4>
+                <h4 className="mb-3 text-sm font-medium text-slate-400 uppercase tracking-wider">
+                  Tools
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   <SkillTag skill="PowerShell" />
                   <SkillTag skill="Shell Scripting" />
@@ -311,6 +333,7 @@ export default function ResumePage() {
           </motion.div>
         </motion.div>
       </motion.div>
+      <BackToTop />
     </main>
   );
 }

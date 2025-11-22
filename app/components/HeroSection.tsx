@@ -21,7 +21,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 50 }
+    transition: { type: "spring" as const, stiffness: 50 },
   },
 };
 
@@ -66,7 +66,8 @@ export default function HeroSection() {
             className="group relative px-8 py-3.5 bg-cyan-500 text-slate-950 font-semibold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:scale-105"
           >
             <span className="relative z-10 flex items-center gap-2">
-              View Projects <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              View Projects{" "}
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </Link>
@@ -79,10 +80,7 @@ export default function HeroSection() {
           </Link>
         </motion.div>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex justify-center"
-        >
+        <motion.div variants={itemVariants} className="flex justify-center">
           <SocialLinks />
         </motion.div>
       </motion.div>

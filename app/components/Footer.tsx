@@ -10,7 +10,8 @@ export default function Footer() {
           <SocialLinks />
         </div>
         <p className="text-slate-500 text-sm">
-          © {new Date().getFullYear()} Joshua Lomond. Built with Next.js & Tailwind CSS.
+          © {new Date().getFullYear()} Joshua Lomond. Built with Next.js &
+          Tailwind CSS.
         </p>
       </div>
     </footer>
